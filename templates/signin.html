@@ -8,5 +8,18 @@
 </head>
 <body>
     <h3>Sign In</h3>
+
+   
+    <form action="/signin" method="post">
+    {% csrf_token %}
+        <label for="">Username</label>
+        <input type="text" id="username" name="username" placeholder="username">
+        <p></p>
+
+        <label for="">Password</label>
+        <input type="password" id="password" name="pass1" placeholder="password"> 
+        <p></p>
+      
+        <button type="submit">Sign In</button>
 </body>
 </html>

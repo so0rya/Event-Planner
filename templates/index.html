@@ -9,8 +9,17 @@
 <body>
     <h3>Welcome to Event Planner</h3>
 
-    <button type="submit"> <a href="/signup">Signup</a></button>
+    {% if user.is_authenticated %}
+    <h3>Hello {{fname}}</h3>
+    <h4>You are successfully logged in</h4>
+    <button type="submit"> <a href="/signout">SignOUT</a></button>
+
+    {% else %}
+    <button type="submit"> <a href="/signup">SignUP</a></button>
 
     <button type="submit"> <a href="/signin">SignIN</a></button>
+    {% endif %}
+
+    
 </body>
 </html>
