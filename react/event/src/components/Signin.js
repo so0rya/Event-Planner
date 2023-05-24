@@ -1,21 +1,22 @@
 import React from 'react';
-import "./signup.scss";
-import { Formik, Form, Field} from 'formik';
+import "./signin.scss";
+import { Formik, Form, Field, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
-
-
+import {Link, BrowserRouter} from 'react-router-dom';
 
 const validationSchema = Yup.object().shape({
   email: Yup.string()
     .email('Invalid email')
+    .matches(/^[a-zA-Z0-9]+(\.)[a-z]+@Thinkpalm\.com$/, 'Email must be from Thinkpalm.com domain')
     .required('Email is required'),
   password: Yup.string()
     .required('Password is required')
     .min(8, 'Password must be at least 8 characters'),
 });
 
-const Signup = () => {
-  ;
+
+const Signin = () => {
+  
   const handleSubmit = async (values, { setSubmitting }) => {
     try {
       debugger
@@ -54,16 +55,18 @@ const Signup = () => {
                   <h1 className='sign'>Sign in</h1>
                   <div className='content'>
                     <Field className="input" type="email" name="email" placeholder="Email " />
-    
+                    <ErrorMessage name='email' component="div"></ErrorMessage>
                   </div>
-
                   <div className='content'>
                     <Field className="input" type="password" name="password" placeholder="Password" />
-                    
+                    <ErrorMessage name='password' component="div"></ErrorMessage>
                   </div>
-                  <button type="submit" className='btn' disabled={!isValid || isSubmitting} >Sign In</button>
-                  {isValid && !isSubmitting }
-             
+                  <button type="submit" className='btn'>Sign In</button>
+                  <p>Not regitered yet?</p>
+                  <div className='signin'>
+                  <Link to="/signup" className='signin'>Signup Now</Link>
+                  <Link to="/home">go to home</Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -73,4 +76,4 @@ const Signup = () => {
     </Formik>
   )
 }
-export default Signup
+export default Signin

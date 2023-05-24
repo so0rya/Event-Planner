@@ -1,0 +1,25 @@
+.nav{
+    background-color: #F7F8F9;
+    height: 80px;
+    align-items: center;
+    // justify-content: center;
+    display: flex;
+}
+
+input {
+        border-radius: 20px;
+        background-color: #F2EFEF;
+        width: 250px;
+        height: 20px;
+        border-color: 1px white;
+        position: fixed;
+        margin-left: 500px;
+}
+
+.user{
+    margin-left: 1200px;
+}
+.search{
+    margin-left: 460px;
+    position: fixed;
+}
