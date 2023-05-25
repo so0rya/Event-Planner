@@ -8,5 +8,27 @@
 </head>
 <body>
     <h3>Sign up</h3>
+    <form action="/signup" method="post">
+    {% csrf_token %}
+        <label for="">Username</label>
+        <input type="text" id="username" name="username" placeholder="username">
+        <p></p>
+        <label for="">First Name</label>
+        <input type="text" id="firstname" name="firstname" placeholder="first name">
+
+        <label for="">Last Name</label>
+        <input type="text" id="lastname" name="lastname" placeholder="last name">
+
+        <label for="">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="email">
+
+        <label for="">Password</label>
+        <input type="password" id="password" name="pass1" placeholder="password"> 
+        <p></p>
+        <label for="">Confirm your password</label>
+        <input type="password" id="confirm password" name="pass2" placeholder="confirm password">
+
+        <button type="submit">Sign Up</button>
+    </form>
 </body>
 </html>
