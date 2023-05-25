@@ -7,7 +7,7 @@ function Navbar() {
     return (
         <div className='nav'>
             <SearchIcon className='search'></SearchIcon>
-            <input></input>
+            <input className='inputs'></input>
             <PersonIcon className='user'></PersonIcon>
         </div>
     )
